@@ -1,10 +1,10 @@
 language: ruby
 rvm:
 - 2.1
-
-script: ./script/cibuild.sh
-
-
+script: "./script/cibuild.sh"
 branches:
   only:
   - content
+env:
+  global:
+    secure: A5Wh3OkLywytMHAaEvnb+LPx5HWpj20TQ0qTPaDWtV8ztE8jdCuvqsH1DYkMEmgGBw4Nc3PaIihGf2F21ieYig3wOQvuktv/4+dadsiipOGuzhWbNu5dEP8c5dddBy6u2+Awz9523ZRD6Ej/RFp62hmlr2bacqHe/vt+5O16+/zOCQgb8lUpyuWzQDQf2MSYn58UKbH5SFd08CqGPlpLr77MULXGw9ULH/2O+Fh9Z6oOz0gmowEsbXcPYmiXZU9QFP9WmS9bCsA3Q5Ky+4pZuEezTVhi6Sneg2gaL41YdG214bzXswawxcqzuND2rngtnarQBnBq7iE7tJcCFGDhef4guVpEbGBOtMrCEIuYqyAnB0MDm2YP4xW8iziq7n9DrRtt7LoUr5J4M4oyxIC3zGLXqPpUunPJJVymzQbDP/ifhEyWAexobI2Q4UDDSEp+kPzxBch+TiUxwlz0pE0LltnvuP7YLmVhqJAVAs6zzhCF0gVIBCQ2+MZYGo+8xbT8oIzolZSRt1E2+41g0FyGXUCFxB8f4/+z+u9Ev33ZfFrX0OiIjh8zltfMOmIQ1SFXrmeWpwR7NB+GDIEutZt16tQLWLGtqhJQfbRcjQ0E0+AvtJYbF6RJ3vrkxlL2we60TLem3l9nt01jVp83zV+XcnyZTZGziFJfEkSNyPHfeSs=
