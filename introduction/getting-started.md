@@ -56,8 +56,8 @@ line
 You can now start writing new features and implementing them in substeps!
 
 ### Learn more about
-* Importing projects into IntelliJ and using the plugin
-* implementing custom step implementations
+* [Importing projects into IntelliJ and using the plugin](../intellij-integration/)
+* [implementing custom step implementations](../customisation/)
 * documentation and execution reports
 * integration with CI
 

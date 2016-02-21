@@ -6,10 +6,17 @@ layout: documentation
 Customisation
 =============
 
-Creating your own suite of bespoke step implementations to perform whatever you like is straight forward.  
+You can build step implementations to do anything; 
+    - send and receive emails
+    - query a database
+    - send JMS messages
+    - make ReST calls
+    - whatever you like...
 
-Step Implementations
---------------------
+To do so, you'll need to implement your own step implementations..
+
+### Step Implementations
+
 
 Implementing your own step implementations is easy, simply annotate the class and method:
 
@@ -65,8 +72,8 @@ NB. this feature is currently only available to step implementations used direct
 The step implementation class(es) will need to be registered in the pom in the `stepImplementationClassNames` section of the `executionConfig`
 
 
-Execution Context
------------------
+### Execution Context
+
 Throughout the test cycle, an execution context is bound to the current thread as a ThreadLocal.  This provides a mechanism by which data can be placed into a scoped context for subsequent use.  Scopes include suite, feature, scenario etc.  At the end of the scope, all data at that level is cleared, providing a safe mechanism to pass data between test elements whilst minimising the risk of polluting other scenarios.
  
 This can be useful for capturing the result of a particular function and using that value in a subsequent step.  The webdriver substep library uses this mechanism to make the initialised webdriver variable accessible across steps within a scenario. 
@@ -100,8 +107,8 @@ BigDecimal initialBalance = initialBalanceInContext.get();
 
 
 
-Setup and tear down
--------------------
+### Setup and tear down
+
 The underlying implementation of test scenarios frequently require setup and tear down.  A number of annotations are provided on the `Annotations` interface to allow for setup and tear down hooks that are called before and after every scenario, feature or suite (all features). For example
 
 ``` java

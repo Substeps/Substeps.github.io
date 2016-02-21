@@ -7,7 +7,9 @@ Content is maintained on the orphan content branch and built there into the _sit
 
 generated artifacts are then copied and committed to the master branch from _site
 
-To run: 
+Travis takes care of all that though!
+
+To run locally: 
 
 ```bundle exec jekyll serve```
 
