@@ -80,6 +80,13 @@ There are a number of settings that apply with a Substeps run configuration:
     </tr>
 
 
+    <tr class="success">
+        <td>executionListeners</td> <td>List</td> <td>List of execution listeners, classes that extend <code>com.technophobia.substeps.runner.ExecutionLogger</code> and are called as test elements start, fail, pass etc.</td>
+    </tr>
+
+
+
+
 
     </tbody>
 </table>
@@ -203,10 +210,17 @@ Running Substeps tests with the Maven plugin is most suited to running a larger 
               <fastFailParseErrors>false</fastFailParseErrors>
               <featureFile>${basedir}/target/classes/features</featureFile>
               <subStepsFileName>${basedir}/target/classes/substeps</subStepsFileName>
+              
               <stepImplementationClassNames>
                 <param>com.technophobia.webdriver.substeps.impl.BaseWebdriverSubStepImplementations</param>
                 <param>my.org.substeps.MyStepImplementations</param>
               </stepImplementationClassNames>
+              
+              <executionListeners>
+                <param>com.technophobia.substeps.runner.logger.StepExecutionLogger</param>
+                <!--	or com.technophobia.substeps.runner.logger.AnsiColourExecutionLogger -->
+              </executionListeners>
+              
             </executionConfig>
           </executionConfigs>
           <executionReportBuilder implementation="com.technophobia.substeps.report.DefaultExecutionReportBuilder">
