@@ -99,7 +99,7 @@ svg {
 }
 
 svg #path {
-  stroke: #000;
+  stroke: #009ADD;
   stroke-width: 2px;
   stroke-dasharray: 900px;
   stroke-dashoffset: 900px;
