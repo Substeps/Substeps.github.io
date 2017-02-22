@@ -1,0 +1,48 @@
+var featureStatsData = [
+  {
+    "total":5,
+    "run":5,
+    "passed":4,
+    "failed":1,
+    "skipped":0,
+    "successPC":80.0,
+    "skippedPC":0.0,
+    "failedPC":20.0,
+    "tag":"@non-visual"
+  },
+  {
+    "total":2,
+    "run":2,
+    "passed":2,
+    "failed":0,
+    "skipped":0,
+    "successPC":100.0,
+    "skippedPC":0.0,
+    "failedPC":0.0,
+    "tag":"un-tagged"
+  }
+];
+var scenarioStatsData = [
+  {
+    "total":7,
+    "run":7,
+    "passed":6,
+    "failed":1,
+    "skipped":0,
+    "successPC":85.71,
+    "skippedPC":0.0,
+    "failedPC":14.28,
+    "tag":"@non-visual"
+  },
+  {
+    "total":0,
+    "run":0,
+    "passed":0,
+    "failed":0,
+    "skipped":0,
+    "successPC":0.0,
+    "skippedPC":0.0,
+    "failedPC":0.0,
+    "tag":"un-tagged"
+  }
+];

@@ -6,11 +6,11 @@ layout: documentation
 Test Execution
 ==============
 
-There are a number of ways to run Substeps tests, with:
-- the IntelliJ plugin
-- the Junit Runner
-- Ant runner
-- Maven
+There are a number of ways to run Substeps tests:
+    - via the Maven plugins which will also produce a test exceution report, an example can be seen [here](/test_report/report_frame.html) 
+    - the IntelliJ plugin
+    - Junit Runner
+    - Ant runner
 
 ## General Settings
 There are a number of settings that apply with a Substeps run configuration:
@@ -35,6 +35,10 @@ There are a number of settings that apply with a Substeps run configuration:
 
     <tr class="warning">
         <td>stepImplementationClassNames</td> <td>String</td> <td>Maven equivalent of the above</td>
+    </tr>
+
+    <tr class="warning">
+        <td>initialisationClass</td> <td>String</td> <td>list of classes containing before and after initialisation methods</td>
     </tr>
 
 
@@ -62,30 +66,19 @@ There are a number of settings that apply with a Substeps run configuration:
     </tr>
 
 
-    
-
-
     <tr class="success">
-        <td>executionReportBuilder</td> <td>String</td> <td>class that extends <code>com.technophobia.substeps.report.ExecutionReportBuilder</code> to be used to generate the test execution report</td>
+        <td>executionResultsCollector</td> <td>String</td> <td>class that extends <code>org.substeps.report.IExecutionResultsCollector</code> that listens for test result notifications, the default implementation writes output files to the data directory.  Takes a dataDir parameter specifying where to write results to.</td>
     </tr>
 
 
     <tr class="success">
-        <td>outputDirectory</td> <td>String</td> <td>the output directory for the report and associated files</td>
-    </tr>
-
-
-    <tr class="success">
-        <td>reportTitle</td> <td>String</td> <td>the title that appears on the report</td>
+        <td>executionReportBuilder</td> <td>String</td> <td>class that extends <code>org.substeps.report.IReportBuilder</code> to be used to generate the test execution report using the data files in the data directory.  Takes a reportDir parameter to specify where the report is to be built</td>
     </tr>
 
 
     <tr class="success">
         <td>executionListeners</td> <td>List</td> <td>List of execution listeners, classes that extend <code>com.technophobia.substeps.runner.ExecutionLogger</code> and are called as test elements start, fail, pass etc.</td>
     </tr>
-
-
-
 
 
     </tbody>
@@ -110,10 +103,7 @@ Tags are hierarchical in that a tag at feature level, implicitly tags all scenar
 Examples of Tag usage
 
 ``` gherkin
-Tags: 
-sprint1
-all
-
+Tags: sprint1 all
 Feature: Sprint1 feature
 
 Tags: scenario1
@@ -126,10 +116,7 @@ Scenario: scenario 2
 ```
 
 ``` gherkin
-Tags: 
-sprint2
-all
-
+Tags: sprint2 all
 Feature: Sprint2 feature
 
 Tags: scenario3
@@ -144,8 +131,93 @@ Scenario: scenario 4
 Any of the individual scenarios can be run by specifying the scenario tag alone.  To run both scenario 1 and 2, the sprint1 tag could be used.  To run all tests, but allow those from sprint 2 to fail, without failing the build, `tags="all", nonFatalTags="sprint2"`.  NB.  If scenario 4 is the only scenario that can fail without affecting the pipeline, the tags will need to be structured in a different way as `tags="all" ,nonFatalTags="scenario4"` will allow scenario 4 to fail, but since a scenario in feature 2 has failed, feature 2 will also fail and thus fail the build.  To run all sprint 1 features except scenario 2, `tags="sprint1 --scenario2"`
 
 
+## Maven
+Running Substeps tests with the Maven plugin is most suited to running a larger number of features and scenarios.  The following configuration is required in the `pom.xml`
+
+``` xml
+<build>
+    <plugins>
+      <plugin>
+        <groupId>org.substeps</groupId>
+        <artifactId>substeps-maven-plugin</artifactId>
+        <version>1.0.5</version>
+        <executions>
+
+          <execution>
+            <id>Substeps Test</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>run-features</goal>
+            </goals>
+          </execution>
+
+          <execution>
+            <id>Build SubSteps Report</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>build-report</goal>
+            </goals>
+          </execution>
+
+          <execution>
+            <id>Build SubSteps Glossary</id>
+            <phase>process-test-resources</phase>
+            <goals>
+              <goal>generate-docs</goal>
+            </goals>
+          </execution>
+
+        </executions>
+
+        <configuration>
+          <runTestsInForkedVM>false</runTestsInForkedVM>
+          <executionConfigs>
+            <executionConfig>
+              <description>Substeps Test description</description>
+              <tags>ALL --WIP</tags>
+              <nonFatalTags>@failing</nonFatalTags>
+              <strict>false</strict>
+              <nonStrictKeywordPrecedence>
+                 <param>Given</param>
+                 <param>When</param>
+                 <param>Then</param>
+                 <param>And</param>
+              </nonStrictKeywordPrecedence>
+              <fastFailParseErrors>false</fastFailParseErrors>
+              <featureFile>${basedir}/target/classes/features</featureFile>
+              <subStepsFileName>${basedir}/target/classes/substeps</subStepsFileName>
+              
+              <stepImplementationClassNames>
+                <param>com.technophobia.webdriver.substeps.impl.BaseWebdriverSubStepImplementations</param>
+                <param>my.org.substeps.MyStepImplementations</param>
+              </stepImplementationClassNames>
+              
+              <executionListeners>
+                <param>com.technophobia.substeps.runner.logger.StepExecutionLogger</param>
+                <!--  or com.technophobia.substeps.runner.logger.AnsiColourExecutionLogger -->
+              </executionListeners>
+              
+            </executionConfig>
+          </executionConfigs>
+
+          <executionResultsCollector implementation="org.substeps.report.ExecutionResultsCollector">
+            <dataDir>${project.build.directory}/substeps_data</dataDir>
+            <pretty>true</pretty>
+          </executionResultsCollector>
+
+          <reportBuilder implementation="org.substeps.report.ReportBuilder">
+            <reportDir>${project.build.directory}/substeps_report</reportDir>
+          </reportBuilder>
+
+        </configuration>
+      </plugin>
+    </plugins>
+</build>
+
+```
+
 ## IntelliJ
-Running individual scenarios or features during development is most easily achieved with the [Substeps IntelliJ plugin](/introduction/intellij-integration/)
+To run individual features during development, the [Substeps IntelliJ plugin](/introduction/intellij-integration/) is probably the easiest option
 
 ## Junit
 If you're not using IntelliJ as your IDE, using the JunitRunner is a reasonable alternative in order to run individual scenarios and features.  You will need to create a class and annotate accordingly:
@@ -172,67 +244,6 @@ public class MyFeatureTest {
 
 
 
-
-
-## Maven
-Running Substeps tests with the Maven plugin is most suited to running a larger number of features and scenarios.  The following configuration is required in the `pom.xml`
-
-``` xml
-<build>
-    <plugins>
-      <plugin>
-        <groupId>org.substeps</groupId>
-        <artifactId>substeps-maven-plugin</artifactId>
-        <version>1.0.1</version>
-        <executions>
-          <execution>
-            <id>Substeps Test</id>
-            <phase>integration-test</phase>
-            <goals>
-              <goal>run-features</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <runTestsInForkedVM>false</runTestsInForkedVM>
-          <executionConfigs>
-            <executionConfig>
-              <description>Substeps Test description</description>
-              <tags>ALL --WIP</tags>
-              <nonFatalTags>@failing</nonFatalTags>
-              <strict>false</strict>
-              <nonStrictKeywordPrecedence>
-                 <param>Given</param>
-                 <param>When</param>
-                 <param>Then</param>
-                 <param>And</param>
-              </nonStrictKeywordPrecedence>
-              <fastFailParseErrors>false</fastFailParseErrors>
-              <featureFile>${basedir}/target/classes/features</featureFile>
-              <subStepsFileName>${basedir}/target/classes/substeps</subStepsFileName>
-              
-              <stepImplementationClassNames>
-                <param>com.technophobia.webdriver.substeps.impl.BaseWebdriverSubStepImplementations</param>
-                <param>my.org.substeps.MyStepImplementations</param>
-              </stepImplementationClassNames>
-              
-              <executionListeners>
-                <param>com.technophobia.substeps.runner.logger.StepExecutionLogger</param>
-                <!--	or com.technophobia.substeps.runner.logger.AnsiColourExecutionLogger -->
-              </executionListeners>
-              
-            </executionConfig>
-          </executionConfigs>
-          <executionReportBuilder implementation="com.technophobia.substeps.report.DefaultExecutionReportBuilder">
-            <outputDirectory>${project.build.directory}</outputDirectory>
-            <reportTitle>Substeps Report - ${project.version}</reportTitle>
-          </executionReportBuilder>
-        </configuration>
-      </plugin>
-    </plugins>
-</build>
-
-```
 
 ## Ant
 The Ant runner has been included as this was part of the original set of Substeps runners.

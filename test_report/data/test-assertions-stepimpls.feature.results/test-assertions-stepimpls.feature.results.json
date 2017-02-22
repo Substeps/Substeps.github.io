@@ -1,0 +1,21 @@
+{
+  "nodeType":"FeatureNode",
+  "filename":"test-assertions-stepimpls.feature",
+  "result":"PASSED",
+  "id":143,
+  "executionDurationMillis":2329,
+  "description":"A feature to test Assertion based Step implementations",
+  "scenarios":[
+    {
+      "nodeId":142,
+      "filename":"Test_Assertion_step_impls_results.json",
+      "result":"PASSED",
+      "tags":[
+        "@non-visual"
+      ]
+    }
+  ],
+  "tags":[
+    "@non-visual"
+  ]
+}

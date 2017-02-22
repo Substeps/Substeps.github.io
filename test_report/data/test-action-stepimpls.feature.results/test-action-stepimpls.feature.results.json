@@ -1,0 +1,21 @@
+{
+  "nodeType":"FeatureNode",
+  "filename":"test-action-stepimpls.feature",
+  "result":"PASSED",
+  "id":131,
+  "executionDurationMillis":5484,
+  "description":"A feature to test Action Step implementations",
+  "scenarios":[
+    {
+      "nodeId":130,
+      "filename":"Test_Action_step_impls_results.json",
+      "result":"PASSED",
+      "tags":[
+        "@non-visual"
+      ]
+    }
+  ],
+  "tags":[
+    
+  ]
+}

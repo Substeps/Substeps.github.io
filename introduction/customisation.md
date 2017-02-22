@@ -72,6 +72,28 @@ NB. this feature is currently only available to step implementations used direct
 The step implementation class(es) will need to be registered in the pom in the `stepImplementationClassNames` section of the `executionConfig`
 
 
+### Glossary documentation
+
+Step implementations can be documented using standard javadocs along with some custom tags:
+
+``` java
+
+    /**
+     * The description of what the step implementation does 
+     * 
+     * @example DoSomething with a parameter "fred"
+     * @section Custom
+     * @param param a string parameter
+     */
+    @Step("DoSomething with parameter \"([^\"]*)\"")
+    public void exampleOne(final String param)  {
+        ...
+    }
+```
+
+A custom javadoc doclet is run as part of the maven plugin report building, with the results added to the test execution report.  The data is also included in any substeps library and is used by the IntelliJ plugin to provide content assist and quick documentation.  On the execution report, the glossary is presented using the Datatables plugin, making the content searchable and sortable.   
+
+
 ### Execution Context
 
 Throughout the test cycle, an execution context is bound to the current thread as a ThreadLocal.  This provides a mechanism by which data can be placed into a scoped context for subsequent use.  Scopes include suite, feature, scenario etc.  At the end of the scope, all data at that level is cleared, providing a safe mechanism to pass data between test elements whilst minimising the risk of polluting other scenarios.

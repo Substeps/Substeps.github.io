@@ -3,7 +3,7 @@ Substeps.org github page
 
 This readme covers the maintenance and development of these docs
 
-Content is maintained on the orphan content branch and built there into the _site folder using jekyll.
+Content is maintained on the orphan `content` branch and built there into the _site folder using jekyll.
 
 generated artifacts are then copied and committed to the master branch from _site
 
@@ -18,3 +18,18 @@ References:
 https://help.github.com/articles/using-jekyll-with-pages/
 
 
+
+TODO
+----
+webdriver manager - issues - github auth
+
+a sample report - add to the menu
+
+
+
+updated pom
+parameter expansion
+
+Test Execution - check
+
+intellij - screen shots, update feature list

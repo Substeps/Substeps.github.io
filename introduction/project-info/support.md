@@ -6,8 +6,7 @@ layout: documentation
 Getting help with Substeps
 ===========================
 
-If you're having some issues or would like some help with the use of Substeps then you can use the existing [Substeps google 
-group](https://groups.google.com/forum/#!forum/substeps) or click [here](https://github.com/Substeps/substeps-framework/issues/new) to raise an issue in the substeps.org github repo
+If you're having some issues or would like some help with the use of Substeps then you can raise a question on gitter [![Join the chat at https://gitter.im/Substeps/substeps-framework](https://badges.gitter.im/Substeps/substeps-framework.svg)](https://gitter.im/Substeps/substeps-framework?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) or click [here](https://github.com/Substeps/substeps-framework/issues/new) to raise an issue in the substeps.org github repo
 
 We're more than happy to accept ideas for new features or pull requests for code or documentation.
 

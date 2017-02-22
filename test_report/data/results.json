@@ -1,0 +1,47 @@
+{
+  "nodeType":"RootNode",
+  "description":"Self Test Features",
+  "result":"FAILED",
+  "id":261,
+  "executionDurationMillis":25345,
+  "features":[
+    {
+      "nodeId":105,
+      "resultsDir":"self-test.feature.results",
+      "result":"CHILD_FAILED"
+    },
+    {
+      "nodeId":131,
+      "resultsDir":"test-action-stepimpls.feature.results",
+      "result":"PASSED"
+    },
+    {
+      "nodeId":143,
+      "resultsDir":"test-assertions-stepimpls.feature.results",
+      "result":"PASSED"
+    },
+    {
+      "nodeId":173,
+      "resultsDir":"test-css-stepimpls.feature.results",
+      "result":"PASSED"
+    },
+    {
+      "nodeId":203,
+      "resultsDir":"test-form-step-impls.feature.results",
+      "result":"PASSED"
+    },
+    {
+      "nodeId":246,
+      "resultsDir":"test-finders-stepimpls.feature.results",
+      "result":"PASSED"
+    },
+    {
+      "nodeId":260,
+      "resultsDir":"test-window-stepimpls.feature.results",
+      "result":"PASSED"
+    }
+  ],
+  "tags":"@non-visual",
+  "timestamp":1487715760884,
+  "environment":"localhost"
+}

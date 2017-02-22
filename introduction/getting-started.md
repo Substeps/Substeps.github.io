@@ -12,7 +12,7 @@ Substeps currently requires
 
 * JDK 1.8.
 * Maven 3 (or equivalent dependency management eg SBT or Ivy).
-* The IntelliJ plugin (optional) depends on v15 (Community or Ultimate) and also needs to run with Java 8.
+* The IntelliJ plugin (optional) depends on 2016 (Community or Ultimate) and also needs to run with Java 8.
 * The webdriver substeps library has additional dependencies, see [here](../webdriver/introduction)
 
 
@@ -28,12 +28,16 @@ Example project
 The Example project can be downloaded from [here](https://github.com/Substeps/substeps-example/releases "Substeps example project releases").  
 Download and extract the contents into a folder.
 
-The example project can be run as is with Maven from the command line by running `mvn clean install` from the root of the project.
+The example project can be run as is with Maven from the command line by running `mvn clean verify` from the root of the project.
 
-You should see Maven run the Substeps suite of 'self tests' and the HTML report should have been produced in 
-`target/feature_report/report_frame.html`
+You should see Maven run the Substeps suite of 'self tests', with the HTML test report produced in 
+`target/substeps_report/report_frame.html`.  The report also includes usage details (for ongoing maintenance of the test pack) and a glossary of step implementations in scope  
 
-#### Starting development using the example project 
+### Example Report ###
+A sample test execution report is included [here](../../substeps_report/report_frame.html), this includes a failing test for illustattive purposes.
+
+
+### Starting development using the example project 
 
 If the example project is to be used as the starting point for a substeps based project you may wish to modify the following in `pom.xml`
 
