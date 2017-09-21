@@ -16,7 +16,6 @@ Substeps currently requires
 * The webdriver substeps library has additional dependencies, see [here](../webdriver/introduction)
 
 
-there are some non-exhaustive notes on the installation of the above [here](installing-prereuisites)
 
 Depending on your background and experience, there are two routes to setting up a Substeps project.
 

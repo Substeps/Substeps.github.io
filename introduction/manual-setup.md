@@ -14,7 +14,7 @@ There are two core substeps dependencies `substeps-core-api` and `substeps-core`
 
 ``` xml
 	<properties>
-        <substeps.framework.version>1.0.1</substeps.framework.version>
+        <substeps.framework.version>1.1.0</substeps.framework.version>
         ...
      </properties>
         
@@ -68,9 +68,52 @@ To run substeps tests using the `substeps-maven-plugin` you will need to add som
 
                 </configuration>
             </execution>
+
+            <execution>
+                <id>Build SubSteps Report</id>
+                <phase>verify</phase>
+                <goals>
+                    <goal>build-report</goal>
+                </goals>
+            </execution>
+
+            <execution>
+                <id>Build SubSteps Glossary</id>
+                <phase>process-test-resources</phase>
+                <goals>
+                    <goal>generate-docs</goal>
+                </goals>
+            </execution>
+
         </executions>
 
-        <configuration>
+        <dependencies>
+
+             <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+
+        </dependencies>
+    </plugin>
+    </build>
+  </profile>
+```
+
+#### Substeps pre v1.1.0 Maven plugin configuration
+
+In addition to the configuration above, substeps configuration was specified in the pom rather than config files
+
+```xml
+      <plugin>
+      <!-- ....  -->
+    <configuration>
+ 
+<!-- ****************************************************
+    As of 1.1.0 version of substeps 
+    all further configuration is in configuration files 
+********************************************************* -->
 
             <runTestsInForkedVM>false</runTestsInForkedVM>
 
@@ -89,7 +132,6 @@ To run substeps tests using the `substeps-maven-plugin` you will need to add som
 
                     <executionListeners>
                         <param>com.technophobia.substeps.runner.logger.StepExecutionLogger</param>
-                        <!--	or com.technophobia.substeps.runner.logger.AnsiColourExecutionLogger -->
                     </executionListeners>
 
                 </executionConfig>
@@ -100,20 +142,6 @@ To run substeps tests using the `substeps-maven-plugin` you will need to add som
                 <reportTitle>Webdriver Substeps - ${project.version}</reportTitle>
               </executionReportBuilder>
 
-        </configuration>
-        <dependencies>
-
-             <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-
-        </dependencies>
+        </configuration> 
     </plugin>
-    </build>
-  </profile>
 ```
-
-
-

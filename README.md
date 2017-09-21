@@ -19,17 +19,3 @@ https://help.github.com/articles/using-jekyll-with-pages/
 
 
 
-TODO
-----
-webdriver manager - issues - github auth
-
-a sample report - add to the menu
-
-
-
-updated pom
-parameter expansion
-
-Test Execution - check
-
-intellij - screen shots, update feature list
