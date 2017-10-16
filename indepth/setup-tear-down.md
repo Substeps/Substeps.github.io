@@ -66,6 +66,7 @@ public class MyStepImplementations {
     ...
 ```
 
+Initialisation classes defined explicitly in configuration will be executed before initialisation classes inferred from annotations.
 
 
 #### Substeps pre v1.1.0

@@ -64,9 +64,6 @@ To run substeps tests using the `substeps-maven-plugin` you will need to add som
                 <goals>
                     <goal>run-features</goal>
                 </goals>
-                <configuration>
-
-                </configuration>
             </execution>
 
             <execution>
@@ -106,14 +103,14 @@ To run substeps tests using the `substeps-maven-plugin` you will need to add som
 In addition to the configuration above, substeps configuration was specified in the pom rather than config files
 
 ```xml
-      <plugin>
-      <!-- ....  -->
-    <configuration>
  
 <!-- ****************************************************
     As of 1.1.0 version of substeps 
     all further configuration is in configuration files 
 ********************************************************* -->
+      <plugin>
+      <!-- ....  -->
+        <configuration>
 
             <runTestsInForkedVM>false</runTestsInForkedVM>
 

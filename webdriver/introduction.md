@@ -3,10 +3,10 @@ title: Substeps | Webdriver | Introduction
 layout: documentation
 ---
 
-Introduction
+Webdriver-Substeps
 ============
 
-The Webdriver step implementations provide some common, reusable substeps based on Selenium Webdriver for the testing of web applications 
+This library of step implementations provide some common, reusable substeps based on Selenium Webdriver for the testing of web applications 
 
 Getting started
 ---------------
@@ -16,20 +16,15 @@ If you've started with the example project, the webdriver substeps library is al
 <dependency>
     <groupId>org.substeps</groupId>
     <artifactId>webdriver-substeps</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.2</version>
 </dependency>
 ```
 
 The latest version of the library is [![Maven Central](https://img.shields.io/maven-central/v/org.substeps/webdriver-substeps.png?label=webdriver-substeps)](https://maven-badges.herokuapp.com/maven-central/org.substeps/webdriver-substeps) 
 
-To bring the step implementations into scope add the following to the substeps-maven plugin configuration:
+As of v1.1.0 of webdriver-substeps, just adding the library as a dependency is sufficient to bring the appropriate step implementations into scope.  
 
-``` xml
-<stepImplementationClassNames>
-    <param>com.technophobia.webdriver.substeps.impl.BaseWebdriverSubStepImplementations</param>
-    ...
-</stepImplementationClassNames>
-```
+In addition HTMLUnit is specified as the default driver type, this can easily be configured otherwise, see the [drivers](../drivers) page for details. , typically this might vary on a per execution config basis
 
 Principles
 ----------
@@ -50,57 +45,20 @@ Finders locate elements based on various criteria and build upon Webdriver's By 
 
 #### Gotchas
 
-There are some gotchas with this approach; with dynamic websites (as most are these days!), elements are frequently removed from the DOM or inaccessible; the finder can succeed but the element becomes stale or detached from the DOM before the action acts upon the element.  The wait mechanism can help with this, waiting for specific marker elements to be present (a title or a label for example) before looking for the real target.
+There are some gotchas with this approach; with dynamic websites, elements are frequently removed from the DOM or inaccessible; the finder can succeed but the element becomes stale or detached from the DOM before the action acts upon the element.  The wait mechanism can help with this, waiting for specific marker elements to be present (a title or a label for example) before looking for the real target.
 
 
+#### Read more about ...
 
-Additional configuration
-------------------------
-The webdriver substeps library has some default configuration that can be overriden in the local environment properties
+- the [configuration](../configuration) options for webdriver-substeps
 
+- options to configure different [drivers](../drivers) or to specify custom driver factories
 
-<table class="table">
-<thead>
-    <tr><th>Property</th> <th>Type</th> <th>Description</th></tr>
-</thead>
-<tbody>
-    <tr><td>base.url</td><td>URL</td><td>file:/// or http://...  Base url to which NavigateTo instructions are appended</td></tr>
-    <tr><td>driver.type</td><td>HTMLUNIT / IE / CHROME /  FIREFOX</td><td>The driver type to be used as a key to the webdriver factory</td></tr>
-    <tr><td>webdriver.shutdown</td><td>true/false</td><td>Shuts the webdriver down after each scenario <strong>default true</strong></td></tr>
-    <tr><td>webdriver.reuse</td><td>true/false</td><td>If no failures keep the webdriver instance open <strong>default false</strong></td></tr>
-    <tr><td>visual.webdriver.close.on.fail</td><td>true/false</td><td>If true this will leave the browser open, useful for debug tests.  Don't use in headless environments. <strong>default true</strong></td></tr>
-    <tr><td>default.webdriver.timeout.secs</td><td>Integer</td><td>Default timeout to wait for elements and conditions <strong>default 10</strong></td></tr>
-    <tr><td>webdriver.locale</td><td>locale identifier</td><td>browser locale <strong>default en-gb</strong></td></tr>
-    <tr><td>htmlunit.disable.javascript</td><td>true/false</td><td>Switch to enable running HTML with js disabled <strong>default false</strong></td></tr>
-    <tr><td>htmlunit.proxy.host=</td><td>URL</td><td>Deprecated - use network.proxy.http instead.  A proxy for Htmlunit. Will run only evaluated if htmlunit.proxy.host is set.</td></tr>
-    <tr><td>htmlunit.proxy.port</td><td></td><td>deprecated - use network.proxy.http_port instead. default 8080</td></tr>
-    <tr><td>network.proxy.host</td><td>URL</td><td>use a proxy for Htmlunit or Firefox. Will run only evaluated if network.proxy.http is set. </td></tr>
-    <tr><td>network.proxy.port</td><td>Integer</td><td>Proxy port <strong>default 8080</strong></td></tr>
-    <tr><td>webdriver.factory.class</td><td>Class</td><td>Class that implements WebDriverFactory and creates webdriver instances based on the driver.type key above <strong>default com.technophobia.webdriver.substeps.runner.DefaultWebDriverFactory</strong></td></tr>
-    <tr><td>step.depth.description</td><td>Integer</td><td>depth to which step descriptions are created when running with JUnit<strong>default 5</strong></td></tr>
+- get a brief overview of the kind of [step implementations](../step-implementations) available
 
-</tbody>
-</table>
+- search through the [glossary](../glossary) for the step implementations included in this library
 
 
-
-
-
-Webdrivers
-----------
-Selenium Webdriver API uses real browser implementations to execute the various actions against the website under test.  Depending on the implementation of choice, Some additional setup maybe required.  Since browsers are frequently updated, it is not uncommon for selenium to suddenly break and be unable to control the browser.  [Check](http://search.maven.org/#search|gav|1|g%3A%22org.seleniumhq.selenium%22%20AND%20a%3A%22selenium-java%22) for a more recent version of selenium and potentially try upgrading.
-
-### HTMLUnit
-The `selenium-java` dependency includes HTMLUnit and no additional configuration is required to run this headless browser.
-
-### Chrome
-To use the Chrome webdriver, firstly Chrome must be installed.  Additionally a [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) needs to be installed that is appropriate to your platform.  A system property `webdriver.chrome.driver` will also need to be set that points to the chromedriver binary, eg. `/path/to/chromedriver`.  This can be set in code or passed in as a `-D` parameter.
-
-### Firefox
-Firefox simply requires the browser to be installed.
-
-### IE
-As a Linux user I've not done much in the way of testing with IE...  As far as I know, if IE is installed it should work...  The feedback of others would be welcome here!
 
 
 

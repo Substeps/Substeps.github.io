@@ -16,7 +16,7 @@ What is Substeps ?
 
 #### A basic feature
 
-```
+``` substeps
 Feature: Users can enter daily timesheets
 
 Scenario: A user can enter timesheet data

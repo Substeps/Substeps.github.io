@@ -31,3 +31,34 @@ A custom javadoc doclet is run as part of the maven plugin report building, with
 The data is also included in any substeps library and is used by the IntelliJ plugin to provide content assist and quick documentation. 
 
 
+### Enabling the glossary builder
+
+To enable the building of the glossary, include the `generate-docs` goal in the configuration of the substeps maven plugin.  The `build-report` goal will then pick up the glossary data and include on the execution report.
+
+``` xml
+
+    <plugin>
+        <groupId>org.substeps</groupId>
+        <artifactId>substeps-maven-plugin</artifactId>
+        <version>${substeps.framework.version}</version>
+
+        <executions>
+            <execution>
+                <id>Build SubSteps Glossary</id>
+                <phase>process-test-resources</phase>
+                <goals>
+                    <goal>generate-docs</goal>
+                </goals>
+            </execution>
+
+            <execution>
+                <id>Build SubSteps Report</id>
+                <phase>verify</phase>
+                <goals>
+                    <goal>build-report</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
+
+```

@@ -6,6 +6,8 @@ layout: glossary-template
 Webdriver substeps glossary
 ===========================
 
+Provided that glossary building is configured in the pom, a project specific glossary will be generated as part of the Substeps test execution report.  Below is the glossary for webdriver-substeps.
+
 <div class="row">
 
     <div class="col-sm-2">
