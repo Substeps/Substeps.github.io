@@ -6,7 +6,7 @@ layout: glossary-template
 Webdriver substeps glossary
 ===========================
 
-Provided that glossary building is configured in the pom, a project specific glossary will be generated as part of the Substeps test execution report.  Below is the glossary for webdriver-substeps.
+Provided that glossary building is configured in the pom (see [here](../../indepth/glossary/#enabling-the-glossary-builder)), a project specific glossary will be generated as part of the Substeps test execution report.  Below is the glossary for webdriver-substeps.
 
 <div class="row">
 
@@ -14,7 +14,7 @@ Provided that glossary building is configured in the pom, a project specific glo
         <label for="glossarySearchField">Search</label>
     </div>
     <div class="col-sm-10">
-        <input type="text" class="form-control" id="glossarySearchField" placeholder="search glossary">
+        <input type="text" class="form-control" id="glossarySearchField" placeholder="search glossary expressions, descriptions or example">
 
     </div>
 

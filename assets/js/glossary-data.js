@@ -4,7 +4,7 @@ var glossary=[
     "expression":"NavigateTo &lt;url&gt;",
     "className":"com.technophobia.webdriver.substeps.impl.ActionWebDriverSubStepImplementations",
     "regex":"NavigateTo ([^\"]*)",
-    "example":"NavigateTo /myApp (will navigate to http://localhost/myApp if\n          base.url is set to http://localhost)",
+    "example":"NavigateTo /myApp (will navigate to http://localhost/myApp if  base.url is set to http://localhost)",
     "description":"Navigate to a url, if the url begins with http or file, the url will be  used as is, if a relative url is specified then it will be prepended with  the base url property",
     "parameterNames":[
       "url"
@@ -384,7 +384,7 @@ var glossary=[
     "expression":"AssertCurrentElement has attributes=[&lt;attributeString&gt;]",
     "className":"com.technophobia.webdriver.substeps.impl.AssertionWebDriverSubStepImplementations",
     "regex":"AssertCurrentElement has attributes=\\[(.*)\\]",
-    "example":"AssertCurrentElement has\n          attributes=[type=\"submit\",value=\"Search\"]",
+    "example":"AssertCurrentElement has  attributes=[type=\"submit\",value=\"Search\"]",
     "description":"Check that the current element has the specified attributes",
     "parameterNames":[
       "attributeString"
@@ -414,7 +414,7 @@ var glossary=[
     "expression":"AssertDifferent rememberedValue \"&lt;rememberedValueName&gt;\" compareToElement \"&lt;elementId&gt;\"",
     "className":"com.technophobia.webdriver.substeps.impl.AssertionWebDriverSubStepImplementations",
     "regex":"AssertDifferent rememberedValue \"([^\"]*)\" compareToElement \"([^\"]*)\"",
-    "example":"AssertDifferent rememberedValue \"savedProjectName\"\n          compareToElement \"projectName\"",
+    "example":"AssertDifferent rememberedValue \"savedProjectName\"  compareToElement \"projectName\"",
     "description":"Compare the text of an element (identified by ID) to a value previously  remembered",
     "parameterNames":[
       "rememberedValueName",
@@ -430,7 +430,7 @@ var glossary=[
     "expression":"AssertSame rememberedValue \"&lt;rememberedValueName&gt;\" compareToElement \"&lt;elementId&gt;\"",
     "className":"com.technophobia.webdriver.substeps.impl.AssertionWebDriverSubStepImplementations",
     "regex":"AssertSame rememberedValue \"([^\"]*)\" compareToElement \"([^\"]*)\"",
-    "example":"AssertSame rememberedValue \"savedProjectName\" compareToElement\n          \"projectName\"",
+    "example":"AssertSame rememberedValue \"savedProjectName\" compareToElement  \"projectName\"",
     "description":"Compare the text of an element (identified by ID) to a value previously  remembered - assert they're the same",
     "parameterNames":[
       "rememberedValueName",
@@ -518,7 +518,7 @@ var glossary=[
     "expression":"FindFirstTagElementContainingText tag=\"&lt;tag&gt;\" text=\"&lt;text&gt;\"",
     "className":"com.technophobia.webdriver.substeps.impl.FinderWebDriverSubStepImplementations",
     "regex":"FindFirstTagElementContainingText tag=\"([^\"]*)\" text=\"([^\"]*)\"",
-    "example":"FindFirstTagElementContainingText tag=\"ul\"\n          text=\"list item itext\"",
+    "example":"FindFirstTagElementContainingText tag=\"ul\"  text=\"list item itext\"",
     "description":"Finds an element on the page with the specified tag and containing the specified text",
     "parameterNames":[
       "tag",
@@ -548,7 +548,7 @@ var glossary=[
     "expression":"FindChild ByTagAndAttributes tag=\"&lt;tag&gt;\" attributes=[&lt;attributeString&gt;]",
     "className":"com.technophobia.webdriver.substeps.impl.FinderWebDriverSubStepImplementations",
     "regex":"FindChild ByTagAndAttributes tag=\"?([^\"]*)\"? attributes=\\[(.*)\\]",
-    "example":"FindChild ByTagAndAttributes tag=\"input\"\n          attributes=[type=\"submit\",value=\"Search\"]",
+    "example":"FindChild ByTagAndAttributes tag=\"input\"  attributes=[type=\"submit\",value=\"Search\"]",
     "description":"Finds an element that is a child of the current element using the tag  name and specified attributes, another Find method should be used first",
     "parameterNames":[
       "tag",
@@ -564,7 +564,7 @@ var glossary=[
     "expression":"FindChild ByTagAndAttributes tag=\"&lt;tag&gt;\" attributes=[&lt;attributeString&gt;] with text=\"&lt;text&gt;\"",
     "className":"com.technophobia.webdriver.substeps.impl.FinderWebDriverSubStepImplementations",
     "regex":"FindChild ByTagAndAttributes tag=\"?([^\"]*)\"? attributes=\\[(.*)\\] with text=\"([^\"]*)\"",
-    "example":"FindChild ByTagAndAttributes tag=\"input\"\n          attributes=[type=\"submit\",value=\"Search\"] with text=\"bob\"",
+    "example":"FindChild ByTagAndAttributes tag=\"input\"  attributes=[type=\"submit\",value=\"Search\"] with text=\"bob\"",
     "description":"Finds an element that is a child of the current element using the tag  name, specified attributes and text, another Find method should be used first",
     "parameterNames":[
       "tag",
@@ -582,7 +582,7 @@ var glossary=[
     "expression":"FindFirstChild ByTagAndAttributes tag=\"&lt;tag&gt;\" attributes=[&lt;attributeString&gt;]",
     "className":"com.technophobia.webdriver.substeps.impl.FinderWebDriverSubStepImplementations",
     "regex":"FindFirstChild ByTagAndAttributes tag=\"?([^\"]*)\"? attributes=\\[(.*)\\]",
-    "example":"FindFirstChild ByTagAndAttributes tag=\"input\"\n          attributes=[type=\"submit\",value=\"Search\"]",
+    "example":"FindFirstChild ByTagAndAttributes tag=\"input\"  attributes=[type=\"submit\",value=\"Search\"]",
     "description":"Finds the first child element of the 'current' element using the tag name  and specified attributes, another Find method should be used first",
     "parameterNames":[
       "tag",
@@ -599,7 +599,7 @@ var glossary=[
     "className":"com.technophobia.webdriver.substeps.impl.FinderWebDriverSubStepImplementations",
     "regex":"FindCheckbox inside tag=\"?([^\"]*)\"? with label=\"([^\"]*)\"",
     "example":"FindCheckbox inside tag=\"label\" with label=\"a checkbox label\"",
-    "description":"Finds a checkbox that is a child of the specified tag, that contains the  specified text; eg.       &lt;pre&gt;      &lt;label&gt;      &lt;input type=&quot;checkbox&quot; name=&quot;checkbox_name&quot; value=&quot;yeah&quot;/&gt;a checkbox &lt;span&gt;label&lt;/span&gt;      &lt;/label&gt;      &lt;/pre&gt;",
+    "description":"Finds a checkbox that is a child of the specified tag, that contains the  specified text; eg.  <p>  &lt;pre&gt;  &lt;label&gt;  &lt;input type=&quot;checkbox&quot; name=&quot;checkbox_name&quot; value=&quot;yeah&quot;/&gt;a checkbox &lt;span&gt;label&lt;/span&gt;  &lt;/label&gt;  &lt;/pre&gt;",
     "parameterNames":[
       "tag",
       "label"
@@ -615,7 +615,7 @@ var glossary=[
     "className":"com.technophobia.webdriver.substeps.impl.FinderWebDriverSubStepImplementations",
     "regex":"FindRadioButton inside tag=\"?([^\"]*)\"? with label=\"([^\"]*)\"",
     "example":"FindRadioButton inside tag=\"label\" with label=\"a radio label\"",
-    "description":"Finds a radiobutton that is a child of the specified tag, that contains  the specified text; eg.       &lt;pre&gt;      &lt;label&gt;      &lt;input type=&quot;radio&quot; name=&quot;radio_name&quot; value=&quot;yeah&quot;/&gt;a radio &lt;span&gt;label&lt;/span&gt;      &lt;/label&gt;      &lt;/pre&gt;",
+    "description":"Finds a radiobutton that is a child of the specified tag, that contains  the specified text; eg.  <p>  &lt;pre&gt;  &lt;label&gt;  &lt;input type=&quot;radio&quot; name=&quot;radio_name&quot; value=&quot;yeah&quot;/&gt;a radio &lt;span&gt;label&lt;/span&gt;  &lt;/label&gt;  &lt;/pre&gt;",
     "parameterNames":[
       "tag",
       "label"
@@ -630,7 +630,7 @@ var glossary=[
     "expression":"FindByTagAndAttributes tag=\"&lt;tag&gt;\" attributes=[&lt;attributeString&gt;]",
     "className":"com.technophobia.webdriver.substeps.impl.FinderWebDriverSubStepImplementations",
     "regex":"FindByTagAndAttributes tag=\"?([^\"]*)\"? attributes=\\[(.*)\\]",
-    "example":"FindByTagAndAttributes tag=\"input\"\n          attributes=[type=\"submit\",value=\"Search\"]",
+    "example":"FindByTagAndAttributes tag=\"input\"  attributes=[type=\"submit\",value=\"Search\"]",
     "description":"Find an element by tag name and a set of attributes and corresponding  values",
     "parameterNames":[
       "tag",
@@ -646,7 +646,7 @@ var glossary=[
     "expression":"FindFirstByTagAndAttributes tag=\"&lt;tag&gt;\" attributes=[&lt;attributeString&gt;]",
     "className":"com.technophobia.webdriver.substeps.impl.FinderWebDriverSubStepImplementations",
     "regex":"FindFirstByTagAndAttributes tag=\"?([^\"]*)\"? attributes=\\[(.*)\\]",
-    "example":"FindFirstByTagAndAttributes tag=\"input\"\n          attributes=[type=\"submit\",value=\"Search\"]",
+    "example":"FindFirstByTagAndAttributes tag=\"input\"  attributes=[type=\"submit\",value=\"Search\"]",
     "description":"Finds the first element by tag name and a set of attributes and  corresponding values",
     "parameterNames":[
       "tag",
@@ -662,7 +662,7 @@ var glossary=[
     "expression":"FindNthByTagAndAttributes n=\"&lt;nth&gt;\" tag=\"&lt;tag&gt;\" attributes=[&lt;attributeString&gt;]",
     "className":"com.technophobia.webdriver.substeps.impl.FinderWebDriverSubStepImplementations",
     "regex":"FindNthByTagAndAttributes n=\"?([^\"]*)\"? tag=\"?([^\"]*)\"? attributes=\\[(.*)\\]",
-    "example":"FindNthByTagAndAttributes n=2 tag=\"input\"\n          attributes=[type=\"submit\",value=\"Search\"]",
+    "example":"FindNthByTagAndAttributes n=2 tag=\"input\"  attributes=[type=\"submit\",value=\"Search\"]",
     "description":"Finds the n th element by tag name and a set of attributes and  corresponding values",
     "parameterNames":[
       "nth",
@@ -680,7 +680,7 @@ var glossary=[
     "expression":"FindParentByTagAndAttributes tag=\"&lt;tag&gt;\" attributes=[&lt;attributeString&gt;] ThatHasChild tag=\"&lt;childTag&gt;\" text=\"&lt;childText&gt;\"",
     "className":"com.technophobia.webdriver.substeps.impl.FinderWebDriverSubStepImplementations",
     "regex":"FindParentByTagAndAttributes tag=\"?([^\"]*)\"? attributes=\\[(.*)\\] ThatHasChild tag=\"?([^\"]*)\"? text=\"([^\"]*)\"",
-    "example":"FindParentByTagAndAttributes tag=\"table\"\n          attributes=[class=\"mytable\"] ThatHasChild tag=\"caption\"\n          text=\"wahoo\"",
+    "example":"FindParentByTagAndAttributes tag=\"table\"  attributes=[class=\"mytable\"] ThatHasChild tag=\"caption\"  text=\"wahoo\"",
     "description":"Finds an element by tag name and a set of attributes and corresponding  values, that has a child tag element of the specified type and having the  specified text",
     "parameterNames":[
       "tag",
@@ -700,7 +700,7 @@ var glossary=[
     "expression":"FindParentByTagAndAttributes tag=\"&lt;tag&gt;\" attributes=[&lt;attributeString&gt;] ThatHasChild tag=\"&lt;childTag&gt;\" attributes=[&lt;childAttributeString&gt;]",
     "className":"com.technophobia.webdriver.substeps.impl.FinderWebDriverSubStepImplementations",
     "regex":"FindParentByTagAndAttributes tag=\"?([^\"]*)\"? attributes=\\[(.*)\\] ThatHasChild tag=\"?([^\"]*)\"? attributes=\\[(.*)\\]",
-    "example":"FindParentByTagAndAttributes tag=\"table\"\n          attributes=[class=\"mytable\"] ThatHasChild tag=\"caption\"\n          attributes=[class=\"childClass\"]",
+    "example":"FindParentByTagAndAttributes tag=\"table\"  attributes=[class=\"mytable\"] ThatHasChild tag=\"caption\"  attributes=[class=\"childClass\"]",
     "description":"Finds an element by tag name and a set of attributes and corresponding  values, that has a child tag element of the specified type that has the  specified attributes..",
     "parameterNames":[
       "tag",
@@ -736,7 +736,7 @@ var glossary=[
     "expression":"FindFirstChildElementContainingText xpath=\"&lt;xpath&gt;\" text=\"&lt;text&gt;\"",
     "className":"com.technophobia.webdriver.substeps.impl.FinderWebDriverSubStepImplementations",
     "regex":"FindFirstChildElementContainingText xpath=\"([^\"]*)\" text=\"([^\"]*)\"",
-    "example":"FindFirstChildElementContainingText xpath=\"li//a\" text =\n          \"Log Out\"",
+    "example":"FindFirstChildElementContainingText xpath=\"li//a\" text =  \"Log Out\"",
     "description":"From the current element, apply the xpath selecting the first child that  has the text ...",
     "parameterNames":[
       "xpath",
@@ -831,7 +831,7 @@ var glossary=[
     "className":"com.technophobia.webdriver.substeps.impl.FormWebDriverSubStepImplementations",
     "regex":"SendKey Key\\.(.+)",
     "example":"SendKey Key.RETURN",
-    "description":"Enters the given key into the current element, without clearing any current content    Note this is to be used for 'special' keys defined by org.openqa.selenium.Keys",
+    "description":"Enters the given key into the current element, without clearing any current content  <p>  Note this is to be used for 'special' keys defined by org.openqa.selenium.Keys",
     "parameterNames":[
       "key"
     ],
@@ -992,7 +992,7 @@ var glossary=[
     ]
   },
   {
-    "section":"Form\n\n used to pass the path of a file for file uploads",
+    "section":"Form  <p>  used to pass the path of a file for file uploads",
     "expression":"SendKeys pathOf property \"&lt;filePropertyName&gt;\" to current element",
     "className":"com.technophobia.webdriver.substeps.impl.FormWebDriverSubStepImplementations",
     "regex":"SendKeys pathOf property \"([^\"]*)\" to current element",
@@ -1074,8 +1074,8 @@ var glossary=[
     "expression":"FindTableRowWithColumnsThatContainText [&lt;columnText&gt;]",
     "className":"com.technophobia.webdriver.substeps.impl.TableSubStepImplementations",
     "regex":"FindTableRowWithColumnsThatContainText \\[(.*)\\]",
-    "example":"FindTableRowWithColumnsThatContainText\n          [\"My Name\",\"Where it all began...\",\"December 19 2012\"]",
-    "description":"Find a row in a table where columns exist that contain the specified  text. Not all columns of the table need to specified, however the order  is important. Finding multiple matching results will result in an error.    Once the row has been located, other FindInRow methods can be used that  may in turn refer to and set the 'Current Element', this method does not  set the current element for that reason.",
+    "example":"FindTableRowWithColumnsThatContainText  [\"My Name\",\"Where it all began...\",\"December 19 2012\"]",
+    "description":"Find a row in a table where columns exist that contain the specified  text. Not all columns of the table need to specified, however the order  is important. Finding multiple matching results will result in an error.  <p>  Once the row has been located, other FindInRow methods can be used that  may in turn refer to and set the 'Current Element', this method does not  set the current element for that reason.",
     "parameterNames":[
       "columnText"
     ],
@@ -1088,7 +1088,7 @@ var glossary=[
     "expression":"FindElementInRow ByTagAndAttributes tag=\"&lt;tag&gt;\" attributes=[&lt;attributeString&gt;]",
     "className":"com.technophobia.webdriver.substeps.impl.TableSubStepImplementations",
     "regex":"FindElementInRow ByTagAndAttributes tag=\"?([^\"]*)\"? attributes=\\[(.*)\\]",
-    "example":"FindElementInRow ByTagAndAttributes tag=\"a\"\n          attributes=[class=\"link-class\",....]",
+    "example":"FindElementInRow ByTagAndAttributes tag=\"a\"  attributes=[class=\"link-class\",....]",
     "description":"Find an element within a table row by tag and attributes.",
     "parameterNames":[
       "tag",
@@ -1329,7 +1329,7 @@ var glossary=[
     "className":"com.technophobia.webdriver.substeps.impl.CssStepImplementations",
     "regex":"FindByCssSelector \"([^\"]*)\"",
     "example":"FindByCssSelector \"#parent_div_id\"",
-    "description":"Finds an element using a css selector; #id, .class for example, more css selectors &lt;a href=\"http://www.w3schools.com/cssref/css_selectors.asp\"&gt;here&lt;/a&gt;",
+    "description":"Finds an element using a css selector; #id, .class for example, more css selectors <a href=\"http://www.w3schools.com/cssref/css_selectors.asp\">here</a>",
     "parameterNames":[
       "cssSelector"
     ],

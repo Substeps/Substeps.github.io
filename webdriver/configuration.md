@@ -83,9 +83,9 @@ org.substeps {
 
     # properties specified here will act as a default for all executionConfig.webdriver elements
     webdriver {
-      #        driver.type=REMOTE
+      # driver.type=REMOTE
       # remote.driver.url="https://"${remote.username}":"${remote.token}"@ondemand.saucelabs.com:443/wd/hub"
-      #                remote.driver.url="http://localhost:4444/wd/hub"
+      # remote.driver.url="http://localhost:4444/wd/hub"
       remote.driver.platform=Linux
     }
   }
