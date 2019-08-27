@@ -1,6 +1,6 @@
 language: ruby
-#rvm:
-#- 2.2
+rvm:
+  - 2.6.3
 script: "./script/cibuild.sh"
 branches:
   only:

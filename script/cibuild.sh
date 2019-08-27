@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e # halt script on error
+set -x # debug
 
 bundle exec jekyll build
 
