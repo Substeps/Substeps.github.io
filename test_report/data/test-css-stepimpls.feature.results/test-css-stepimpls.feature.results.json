@@ -1,0 +1,21 @@
+{
+  "nodeType":"FeatureNode",
+  "filename":"test-css-stepimpls.feature",
+  "result":"PASSED",
+  "id":173,
+  "executionDurationMillis":3818,
+  "description":"A feature to test CSS Step implementations",
+  "scenarios":[
+    {
+      "nodeId":172,
+      "filename":"Test_css_step_impls_results.json",
+      "result":"PASSED",
+      "tags":[
+        "@non-visual"
+      ]
+    }
+  ],
+  "tags":[
+    "@non-visual"
+  ]
+}

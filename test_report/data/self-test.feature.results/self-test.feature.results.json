@@ -1,0 +1,21 @@
+{
+  "nodeType":"FeatureNode",
+  "filename":"self-test.feature",
+  "result":"CHILD_FAILED",
+  "id":105,
+  "executionDurationMillis":5585,
+  "description":"A feature to self test the webdriver substeps implementations",
+  "scenarios":[
+    {
+      "nodeId":104,
+      "filename":"a_scenario_results.json",
+      "result":"CHILD_FAILED",
+      "tags":[
+        "@non-visual"
+      ]
+    }
+  ],
+  "tags":[
+    "@non-visual"
+  ]
+}

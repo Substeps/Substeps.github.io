@@ -1,0 +1,266 @@
+div.container {
+  max-width: 1024px;
+  width: auto;
+}
+
+.jumbotron.jumbotron--home {
+  height: 100vh;
+  max-height: 1200px;
+  background: #fff;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  max-width: 1200px;
+}
+
+.about {
+  max-height: 1200px;
+  background: #003E7F;
+  padding: 4rem 1rem 10rem;
+}
+
+.about h2 {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 4rem;
+}
+
+.about p {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 8rem;
+}
+
+.started {
+  max-height: 1200px;
+  background: #fff;
+  padding: 4rem 1rem 10rem;
+}
+
+.started h2 {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #003E7F;
+  margin-bottom: 4rem;
+}
+
+.started p {
+  font-size: 2rem;
+  color: #003E7F;
+  margin-bottom: 8rem;
+}
+
+h1.title {
+  font-size: 12rem;
+  position: relative;
+  top: 40%;
+  left: 7%;
+  transform: translateY(-20%);
+  color: #16202B;
+  animation-name: fadeUpIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+p.subtitle {
+  position: relative;
+  top: 35%;
+  left: 25%;
+  transform: translateY(-0%);
+  animation-name: fadeUpIn;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.dark-blue {
+  color: #003E7F;
+}
+
+.logo {
+  height: 200px;
+  position: relative;
+  right: 7%;
+  top: 5%;
+}
+
+svg {
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+svg #path {
+  stroke: #009ADD;
+  stroke-width: 2px;
+  stroke-dasharray: 900px;
+  stroke-dashoffset: 900px;
+  animation-name: draw;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  opacity: 0;
+}
+
+svg.filler {
+  animation-name: fill;
+  animation-duration: 0.25s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  opacity: 0;
+}
+
+.new-footer {
+  background: #003E7F;
+  color: #fff;
+  height: 200px;
+  padding: 4rem 1rem;
+}
+
+.button {
+  font-size: 2.4rem;
+  padding: 1.5rem 3rem;
+}
+
+.button--blue {
+  background: #003E7F;
+  color: #fff;
+}
+
+.button--blue:hover {
+  background: #00254d;
+  color: #fff;
+}
+
+.button--white {
+  background: #fff;
+  color: #023E7F;
+}
+
+.button--white:hover {
+  background: #ddd;
+  color: #003E7F;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.nav__links {
+  margin-right: 2rem;
+  text-align: right;
+  position: fixed;
+  background: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  opacity: 0.8;
+  transition: all 0.15s linear;
+}
+
+.nav__links:hover {
+  opacity: 1;
+  transition: all 0.25s linear;
+}
+
+
+.nav__link {
+  display: inline-block;
+  padding: 1.5rem 2rem;
+  transition: all 0.25s linear;
+}
+
+.nav__link:hover {
+  background: #ddd;
+  transition: all 0.15s linear;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 900px;
+    opacity: 0;
+  }
+
+  70% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fill {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUpIn {
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 1024px) {
+
+  h1.title {
+    font-size: 7rem;
+    left: 10%;
+  }
+
+  p.subtitle {
+    top: 37%;
+    left: 10%;
+  }
+
+  .logo {
+    height: 150px;
+    position: relative;
+    right: 10%;
+    top: 15%;
+  }
+}
+
+@media (max-width: 740px) {
+  .logo {
+    display: none;
+  }
+
+  h1.title {
+    font-size: 7rem;
+    left: 10%;
+  }
+
+  p.subtitle {
+    top: 37%;
+    left: 10%;
+  }
+
+  .nav__link {
+    font-size: 1.4rem;
+    display: inline-block;
+    padding: 1rem;
+    transition: all 0.25s linear;
+  }
+}
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
